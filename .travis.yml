@@ -1,0 +1,10 @@
+language: java
+
+branches:
+  only:
+  - master
+
+install: mvn install -DskipTests=true -Dgpg.skip=true
+
+script:
+- mvn clean verify
