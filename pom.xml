@@ -54,6 +54,13 @@
   </prerequisites>
   
   <dependencies>
+    <!-- For RecordCollection -->
+    <dependency>
+      <groupId>com.brotherlogic.recordcollection</groupId>
+      <artifactId>recordcollection</artifactId>
+      <version>0.1</version>
+    </dependency>
+
     <!-- For CLI options -->
     <dependency>
       <groupId>net.sf.jopt-simple</groupId>

@@ -1,14 +1,17 @@
 package com.brotherlogic.rccli;
 
+import com.brotherlogic.recordcollection.MainSystem;
+import com.brotherlogic.recordcollection.RcSystem;
+
 import joptsimple.OptionSet;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-
-
 public class Runner {
+
+  RcSystem collection = new MainSystem();
 
   protected Properties getProperties(InputStream stream) {
     try {
@@ -26,7 +29,8 @@ public class Runner {
 
     if (options.has("version")) {
       Properties props = getProperties(Runner.class.getResourceAsStream("properties.txt"));
-      return props.getProperty("version");
+      return "CLI Version: " + props.getProperty("version") + "\nRC Version:  "
+          + collection.getVersion();
     }
 
     return "ERROR: no option selected";
